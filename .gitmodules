@@ -7,3 +7,6 @@
 [submodule "lv_demos"]
 	path = lv_demos
 	url = https://github.com/lvgl/lv_demos.git
+[submodule "gui"]
+	path = gui
+	url = https://github.com/lvgl-private/hilt_oven_gui.git

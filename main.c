@@ -20,6 +20,7 @@
 #include "lv_drivers/indev/mouse.h"
 #include "lv_drivers/indev/keyboard.h"
 #include "lv_drivers/indev/mousewheel.h"
+#include "gui/gui.h"
 
 /*********************
  *      DEFINES
@@ -80,7 +81,7 @@ int main(int argc, char **argv)
 
 //  lv_example_switch_1();
 //  lv_example_calendar_1();
-//  lv_example_btnmatrix_2();
+//  lv_example_btnmatrix_2();needed
 //  lv_example_checkbox_1();
 //  lv_example_colorwheel_1();
 //  lv_example_chart_6();
@@ -96,7 +97,9 @@ int main(int argc, char **argv)
 //  lv_example_flex_3();
 //  lv_example_label_1();
 
-    lv_demo_widgets();
+//    lv_demo_widgets();
+
+  gui_scr_main_create();
 
   while(1) {
       /* Periodically call the lv_task handler.
@@ -106,6 +109,40 @@ int main(int argc, char **argv)
   }
 
   return 0;
+}
+
+void oven_start(void)
+{
+	printf("Start\n");
+}
+void oven_stop(void)
+{
+	printf("Stop\n");
+}
+
+void oven_set_temp_goal(uint16_t v)
+{
+	printf("Temp. goal %d\n", v);
+}
+
+void oven_set_steam_goal(uint16_t v)
+{
+	printf("Steam goal %d\n", v);
+}
+
+void oven_set_fan_state(bool state)
+{
+	printf("Fan %s\n", state ? "ON" : "OFF");
+}
+
+void oven_set_top_heat_state(bool state)
+{
+	printf("Top heat %s\n", state ? "ON" : "OFF");
+}
+
+void oven_set_bottom_heat_state(bool state)
+{
+	printf("Bottom heat %s\n", state ? "ON" : "OFF");
 }
 
 /**********************
